@@ -1,0 +1,131 @@
+/* font-family: 'Almarai', sans-serif;
+font-family: 'Bebas Neue', sans-serif;
+font-family: 'Bruno Ace SC', cursive;
+font-family: 'Fjalla One', sans-serif;
+font-family: 'Josefin Sans', sans-serif;
+font-family: 'Poppins', sans-serif;
+font-family: 'Roboto', sans-serif;
+font-family: 'Roboto Slab', serif;
+font-family: 'Sigmar', cursive;
+font-family: 'Varela Round', sans-serif; */
+
+.cajaLogin {
+  background-color: rgba(0, 0, 0, 0.459);
+  width: 70vh;
+  height: 40vh;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr 1.8fr);
+  margin: 0 auto;
+  /* justify-content: center;
+    align-items: center; */
+  border-radius: 15px;
+  margin-bottom: 15%;
+  box-shadow: 0px 0px 15px 1px black;
+}
+
+.logoLogin {
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  display: grid;
+  grid-template-rows: repeat(1, 2fr 0.7fr 1.3fr);
+  justify-content: center;
+  align-items: center;
+  padding: 5%;
+}
+
+.cajaLogo {
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+.logoLogin img {
+  width: 50%;
+  filter: drop-shadow(0px 20px 40px black);
+  position: relative;
+  top: 20px;
+}
+
+.cajaIniSes {
+  width: 100%;
+  height: 100%;
+}
+
+.cajaIniSes h1 {
+  font-size: 150%;
+  font-family: "Almarai", sans-serif;
+  color: rgb(255, 255, 255);
+}
+
+.cajaOlvCont {
+  width: 100%;
+  height: 100%;
+}
+
+.cajaOlvCont h1 {
+  font-size: 60%;
+  font-family: 'Poppins', sans-serif;
+  color: rgb(255, 255, 255);
+}
+
+.cajaOlvCont a {
+    font-size: 60%;
+    font-family: 'Poppins', sans-serif;
+    color: rgb(255, 255, 255);
+    position: relative;
+    bottom: 10px;
+  }
+
+.inputsLogin {
+  clip-path: polygon(10% 0%, 100% 0%, 100% 100%, 10% 100%, 0% 50%);
+  background-color: rgba(218, 223, 217, 0.665);
+  border-radius: 15px;
+}
+
+.inputsLogin form{
+    width: 100%;
+    height: 100%;
+    padding-bottom: 40% 0;
+    display: grid;
+  }
+
+.cajaInputs{
+    display: grid;
+    align-items: center;
+    margin-top: 90px;
+}
+
+.cajaInputs input{
+    margin: 0% 15%;
+    height: 30px;
+}
+
+.btnLogin{
+    margin-bottom: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btnLogin button{
+    width: 100px;
+    height: 40px;
+    border-radius: 20px;
+    border: none;
+    background-color: rgb(50, 49, 49);
+    font-family: 'Poppins', sans-serif;
+    color: rgb(14, 161, 16);
+    cursor: pointer;
+    letter-spacing: 0.5px;
+}
+
+.footerLogin {
+  background-color: rgb(14, 143, 10);
+  position: absolute;
+  text-align: center;
+  bottom: 0;
+  right: 0%;
+  width: 100%;
+}
