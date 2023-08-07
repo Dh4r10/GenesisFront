@@ -4,6 +4,7 @@ import axios from "axios";
 import "../styles/login.css";
 import Logo from "../images/logo_UNSM.png";
 import { loginAPI } from "../api/apiUrl";
+import { Validations } from "../functions/validations";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faEye, faEyeSlash } from "@fortawesome/free-regular-svg-icons";
@@ -12,7 +13,6 @@ import { faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons";
 
 function Login() {
   const [showPass, setShowPass] = useState(false);
-  const [valUser, setValUser] = useState(false);
 
   const [sexo, setSexo] = useState();
   const [edad, setEdad] = useState();
@@ -92,7 +92,6 @@ function Login() {
                   className="inputPassword"
                   onChange={handlePrueba2}
                   maxLength={30}
-                  minLength={8}
                 />
                 <i className="viewPass" onClick={() => setShowPass(!showPass)}>
                   <FontAwesomeIcon
@@ -103,7 +102,9 @@ function Login() {
               </div>
             </div>
             <div className="btnLogin">
-              <button type="submit" >Login</button>
+              <button id="buttonLogin" type="submit" onClick={Validations}>
+                Login
+              </button>
             </div>
             <p className="warnings" id="warnings"></p>
           </form>
