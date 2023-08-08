@@ -1,1 +1,1 @@
-export const loginAPI = "https://jsonplaceholder.typicode.com/posts"
+export const loginAPI = "http://127.0.0.1:8000/api/usuarios/"

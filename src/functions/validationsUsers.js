@@ -16,6 +16,10 @@ export const Validations = () => {
       warnings += `⚠️ El usuario es muy corto ⚠️<br>`;
       entrar = true;
     }
+    if (usuario.value.length > 8) {
+      warnings += `⚠️ No puedes usar mas de 8 caracteres ⚠️<br>`;
+      entrar = true;
+    }
   }
 
   if (pass.value.length == 0) {

@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import axios from "axios";
 
 import "../styles/login.css";
 import Logo from "../images/logo_UNSM.png";
-import { loginAPI } from "../api/apiUrl";
-import { Validations } from "../functions/validations";
+import { HandleSubmitUsers } from '../functions/postDataUsers'
+import { handleDni, handleContrasenia, handleClickButton} from '../functions/handlesUsers'
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faEye, faEyeSlash } from "@fortawesome/free-regular-svg-icons";
@@ -12,37 +11,13 @@ import { faLock, faGlobe } from "@fortawesome/free-solid-svg-icons";
 import { faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons";
 
 function Login() {
+
   const [showPass, setShowPass] = useState(false);
 
-  const [sexo, setSexo] = useState();
-  const [edad, setEdad] = useState();
+  const [dni, setDni] = useState();
+  const [contrasenia, setContrasenia] = useState();
+  const [idperfil, setIdperfil] = useState();
 
-  const handlePrueba1 = (e) => {
-    const { value } = e.target;
-    setSexo(value);
-  };
-
-  const handlePrueba2 = (e) => {
-    const { value } = e.target;
-    const valor = value.toUpperCase();
-    setEdad(valor);
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    axios
-      .post(loginAPI, {
-        sexo,
-        edad,
-      })
-      .then(function (response) {
-        console.log(response.data);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-  };
   return (
     <>
       <header>
@@ -68,7 +43,7 @@ function Login() {
           </div>
         </div>
         <div className="inputsLogin">
-          <form id="form" onSubmit={handleSubmit}>
+          <form id="form" onSubmit={(e) => HandleSubmitUsers(e, dni, contrasenia, idperfil)}>
             <div className="cajaInputs">
               <div>
                 <i className="authentication">
@@ -78,7 +53,8 @@ function Login() {
                   id="usuario"
                   type="text"
                   placeholder="Usuario"
-                  onChange={handlePrueba1}
+                  autoComplete="off"
+                  onChange={(e) => handleDni(e,setDni)}
                 />
               </div>
               <div>
@@ -88,9 +64,10 @@ function Login() {
                 <input
                   id="password"
                   type={showPass ? "text" : "password"}
-                  placeholder="●●●●●●●●●●●● "
+                  placeholder="●●●●●●●●●●●●"
+                  autoComplete="off"
                   className="inputPassword"
-                  onChange={handlePrueba2}
+                  onChange={(e) => handleContrasenia(e,setContrasenia)}
                   maxLength={30}
                 />
                 <i className="viewPass" onClick={() => setShowPass(!showPass)}>
@@ -102,7 +79,7 @@ function Login() {
               </div>
             </div>
             <div className="btnLogin">
-              <button id="buttonLogin" type="submit" onClick={Validations}>
+              <button id="buttonLogin" type="submit" onClick={() => handleClickButton(dni, setIdperfil)}>
                 Login
               </button>
             </div>
